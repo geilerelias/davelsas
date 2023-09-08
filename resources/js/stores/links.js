@@ -10,7 +10,7 @@ export const useLinksStore = defineStore('links', {
                 "icon": "mdi-home"
             },
             {
-                "name": "Acerca de Nosotros",
+                "name": "Nosotros",
                 "route": "#about-us",
                 "icon": "mdi-account-question"
             },

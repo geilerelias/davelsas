@@ -9,7 +9,7 @@
                     <h1
                         class="text-center text-uppercase text-h5 font-weight-bold mb-2  animate__animated animate__zoomIn"
                     >
-                        acerca de Nosotros
+                        Nosotros
                     </h1>
                     <v-responsive class=" rounded-lg bg-secondary mx-auto mb-6" style="max-width: 100px;">
                         <v-divider class="pb-1 rounded-lg" light/>
@@ -118,84 +118,81 @@
 
                 </v-col>
 
-
             </v-row>
 
 
         </v-container>
+
+
         <div
             style="background-color: rgb(218, 218, 218);"
         >
-            <v-row class="py-5 my-0">
-                <v-col class="col">
-                    <v-container class="container">
-                        <v-row
-                            class="d-flex justify-content-around justify-center "
+            <v-container>
+                <v-row
+                    class="d-flex justify-content-around justify-center "
+                >
+                    <v-col cols="12" lg="5" md="6">
+                        <v-card
+                            class="mr-1 fill-height animate__animated animate__bounceInLeft"
+                            tile
                         >
-                            <v-col cols="12" lg="5" md="6">
-                                <v-card
-                                    class="mr-1 fill-height animate__animated animate__bounceInLeft"
-                                    tile
+                            <v-card-title>
+                                <h4
+                                    class="d-flex justify-center bg-secondary rounded-lg pt-2 pb-2 fill-width"
+                                    style="width: 100%"
                                 >
-                                    <v-card-title>
-                                        <h4
-                                            class="d-flex justify-center bg-secondary pt-2 pb-2 fill-width"
-                                            style="width: 100%"
-                                        >
-                                            Misión
-                                        </h4>
-                                    </v-card-title>
+                                    Misión
+                                </h4>
+                            </v-card-title>
 
-                                    <v-card-text>
-                                        <p
-                                            class="mx-2 my-3 text-subtitle-1 text-justify"
-                                        >
-                                            Somos una empresa especializada en Ingeniería, construcción y gerencia de
-                                            proyectos que equilibra
-                                            las demandas concurrentes de calidad, alcance tiempo y costos; adaptando las
-                                            especificaciones, los
-                                            planes y el enfoque a las diversas inquietudes y expectativas de nuestros
-                                            clientes. Trabajando en
-                                            un
-                                            entorno que motiva y desarrolla a nuestro personal y respetando el medio
-                                            ambiente en que nos
-                                            desarrollamos.
-                                        </p>
-                                    </v-card-text>
-                                </v-card>
-                            </v-col>
-                            <v-col class="mt-4 mt-md-0" cols="12" lg="5" md="6">
-                                <v-card
-                                    class="mr-1 fill-height  animate__animated animate__bounceInRight"
+                            <v-card-text>
+                                <p
+                                    class="mx-2 my-3 text-subtitle-1 text-justify"
                                 >
-                                    <v-card-title>
-                                        <h4
-                                            class="text-white d-flex justify-center bg-primary pt-2 pb-2  fill-width"
-                                            style="width: 100%"
-                                        >
-                                            Visión
-                                        </h4>
-                                    </v-card-title>
+                                    Somos una empresa especializada en Ingeniería, construcción y gerencia de
+                                    proyectos que equilibra
+                                    las demandas concurrentes de calidad, alcance tiempo y costos; adaptando las
+                                    especificaciones, los
+                                    planes y el enfoque a las diversas inquietudes y expectativas de nuestros
+                                    clientes. Trabajando en
+                                    un
+                                    entorno que motiva y desarrolla a nuestro personal y respetando el medio
+                                    ambiente en que nos
+                                    desarrollamos.
+                                </p>
+                            </v-card-text>
+                        </v-card>
+                    </v-col>
+                    <v-col class="mt-4 mt-md-0" cols="12" lg="5" md="6">
+                        <v-card
+                            class="mr-1 fill-height  animate__animated animate__bounceInRight"
+                        >
+                            <v-card-title>
+                                <h4
+                                    class="text-white d-flex justify-center bg-primary rounded-lg pt-2 pb-2  fill-width"
+                                    style="width: 100%"
+                                >
+                                    Visión
+                                </h4>
+                            </v-card-title>
 
-                                    <v-card-text>
-                                        <p
-                                            class="mx-2 my-3 text-subtitle-1 text-justify"
-                                        >
-                                            Ser reconocidos como una de las empresas líderes en el sector de Ingeniería,
-                                            construcción y
-                                            gerencia de proyectos en los mercados y proyectos donde participemos, en
-                                            base a nuestro factor
-                                            humano, políticas de calidad, seguridad y medio ambiente, cumpliendo a
-                                            cabalidad y puntualidad
-                                            en todos nuestros compromisos.
-                                        </p>
-                                    </v-card-text>
-                                </v-card>
-                            </v-col>
-                        </v-row>
-                    </v-container>
-                </v-col>
-            </v-row>
+                            <v-card-text>
+                                <p
+                                    class="mx-2 my-3 text-subtitle-1 text-justify"
+                                >
+                                    Ser reconocidos como una de las empresas líderes en el sector de Ingeniería,
+                                    construcción y
+                                    gerencia de proyectos en los mercados y proyectos donde participemos, en
+                                    base a nuestro factor
+                                    humano, políticas de calidad, seguridad y medio ambiente, cumpliendo a
+                                    cabalidad y puntualidad
+                                    en todos nuestros compromisos.
+                                </p>
+                            </v-card-text>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </v-container>
         </div>
     </section>
 </template>
