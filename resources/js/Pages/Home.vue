@@ -44,6 +44,7 @@ const links = linksStore.links;
                     <div :class="smAndDown?'fill-height':''">
                         <div
                             :class="[mdAndUp?'float-left-logo mt-16 ml-16':'d-flex justify-center align-center',smAndDown?'fill-height':'']"
+                            class="animate__animated animate__backInDown"
                             style="min-width: 100px">
                             <v-img :src="logoDark" height="300" width="300">
                             </v-img>

@@ -12,7 +12,13 @@ import Vuetify from '../plugins/vuetify'
 
 //pinia
 import {pinia} from './pinia'; // Ajusta la ruta si es necesario
+//sweetalert
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
+
+//animate
+import 'animate.css';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -23,6 +29,7 @@ createInertiaApp({
         return createApp({render: () => h(App, props)})
             .use(Vuetify)
             .use(pinia)
+            .use(VueSweetalert2)
             .use(plugin)
             .use(ZiggyVue)
             .mount(el);

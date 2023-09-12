@@ -61,9 +61,9 @@ const isDarkTheme = computed(() => {
 
 
 function isActive(route) {
-    console.log('route ', route)
-    console.log('activeSection ', activeSection.value)
-    console.log('activeSectionStore ', activeSectionStore.activeSection)
+    //console.log('route ', route)
+    //console.log('activeSection ', activeSection.value)
+    //console.log('activeSectionStore ', activeSectionStore.activeSection)
     return route === activeSection.value;
 }
 
@@ -88,7 +88,7 @@ function onScroll() {
 function scrollToSection(idName) {
     // Cambia esto al ID de la sección a la que deseas desplazarte
     const targetSection = document.getElementById(idName.slice(1));
-    console.log(targetSection)
+    //console.log(targetSection)
     if (targetSection) {
         const targetOffset = targetSection.offsetTop;
 
@@ -158,7 +158,7 @@ function toggleTheme() {
             <v-icon :icon="$vuetify.theme.name === 'dark' ? 'mdi-weather-sunny' : 'mdi-weather-night'"></v-icon>
         </v-btn>
         <!--  v-if="smAndDown"      -->
-        <v-app-bar-nav-icon @click="toggleDrawer">
+        <v-app-bar-nav-icon v-if="smAndDown" @click="toggleDrawer">
         </v-app-bar-nav-icon>
     </v-app-bar>
     <div>

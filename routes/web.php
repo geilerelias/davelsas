@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SendMailController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -57,3 +58,8 @@ Route::get('/example-2', function () {
 Route::get('/service-item', function () {
     return Inertia::render('ServiceItem');
 })->name('service.item');
+
+
+//send mail contact
+Route::post('/send-mail', [SendMailController::class, 'send'])
+    ->name('send-email');

@@ -133,7 +133,7 @@
                 >
                     <v-col cols="12" lg="5" md="6">
                         <v-card
-                            class="mr-1 fill-height animate__animated animate__bounceInLeft"
+                            class="mr-1 mission fill-height animate__animated animate__bounceInLeft"
                             tile
                         >
                             <v-card-title>
@@ -165,7 +165,7 @@
                     </v-col>
                     <v-col class="mt-4 mt-md-0" cols="12" lg="5" md="6">
                         <v-card
-                            class="mr-1 fill-height  animate__animated animate__bounceInRight"
+                            class="vision mr-1 fill-height  animate__animated  animate__bounceInRight"
                         >
                             <v-card-title>
                                 <h4
@@ -198,9 +198,46 @@
 </template>
 
 <script setup>
+const elementosMission = document.querySelectorAll('.mission');
+const elementosVision = document.querySelectorAll('.vision');
+
+function manejarScroll() {
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    elementosMission.forEach((elemento) => {
+        const rect = elemento.getBoundingClientRect();
+        if (rect.top <= windowHeight * 0.5) {
+            elemento.classList.add('animate__bounceInRight', 'animate__animated');
+        }
+    });
+
+    elementosVision.forEach((elemento) => {
+        const rect = elemento.getBoundingClientRect();
+        if (rect.top <= windowHeight * 0.5) {
+            elemento.classList.add('animate__bounceInRight', 'animate__animated');
+        }
+    });
+
+    // Remover el evento de scroll una vez que se activan las animaciones
+    window.removeEventListener('scroll', manejarScroll);
+}
+
+window.addEventListener('scroll', manejarScroll);
+
+// Función para desplazarse a la clase "mission"
+function scrollAMission() {
+    const primerElementoMission = elementosMission[0];
+    primerElementoMission.scrollIntoView({behavior: 'smooth'});
+}
+
+// Función para desplazarse a la clase "vision"
+function scrollAVision() {
+    const primerElementoVision = elementosVision[0];
+    primerElementoVision.scrollIntoView({behavior: 'smooth'});
+}
+
 
 </script>
-
 <style lang="scss" scoped>
 
 </style>

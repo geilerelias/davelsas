@@ -1,18 +1,42 @@
 <script setup>
 
 import {ref} from "vue";
+import {useForm} from "@inertiajs/vue3";
+import Swal from 'sweetalert2'
 
-const mail = {
+const mail = useForm({
     name: '',
     email: '',
     subject: '',
     content: ''
-}
+})
 
 const smAndUp = ref(null)
 
 
 function enviar(mail) {
+    mail.post("/send-mail", {
+        preserveScroll: true,
+
+        onSuccess: () => {
+            Swal.fire(
+                "Mensaje Enviado Exitosamente",
+                "Su mensaje ha sido enviado con éxito. Agradecemos su contacto y responderemos a la brevedad posible.",
+                "success"
+            );
+            mail.reset()
+        },
+        onError: errors => {
+            let errorsMessage = Object.values(errors).join("<br>");
+
+            Swal.fire({
+                icon: "error",
+                title: "Ups...",
+                html: errorsMessage,
+            });
+        },
+
+    })
 }
 
 </script>
@@ -152,31 +176,49 @@ function enviar(mail) {
                                     <v-row>
                                         <v-col>
                                             <v-text-field v-model="mail.name"
+                                                          :error-messages="mail.errors.name"
                                                           dense
                                                           label="Nombre"
+                                                          variant="outlined"
+                                                          @blur="mail.clearErrors('name')"
+
                                             />
                                         </v-col>
                                         <v-col>
                                             <v-text-field v-model="mail.email"
+                                                          :error-messages="mail.errors.email"
                                                           dense
                                                           label="Email"
+                                                          variant="outlined"
+                                                          @blur="mail.clearErrors('email')"
                                             />
                                         </v-col>
 
                                         <v-col cols="12">
                                             <v-text-field v-model="mail.subject"
-                                                          dense label="Asunto"
+                                                          :error-messages="mail.errors.subject"
+                                                          dense
+                                                          label="Asunto"
+                                                          variant="outlined"
+                                                          @blur="mail.clearErrors('subject')"
+
                                             />
                                         </v-col>
                                         <v-col cols="12">
                                             <v-textarea v-model="mail.content"
+                                                        :error-messages="mail.errors.content"
                                                         dense
                                                         label="Descripción del mensaje"
+                                                        variant="outlined"
+                                                        @blur="mail.clearErrors('content')"
                                             />
                                         </v-col>
                                         <v-col cols="12">
                                             <div class="d-flex justify-center">
-                                                <v-btn class="font-weight-bold " color="primary" dark
+                                                <v-btn :disabled="mail.processing"
+                                                       :loading="mail.processing"
+                                                       class="font-weight-bold "
+                                                       color="primary" dark
                                                        @click="enviar(mail)">
                                                     Enviar mensaje
                                                 </v-btn>
