@@ -148,7 +148,7 @@ function toggleTheme() {
                     @click="scrollToSection(link.route)">
                     {{ link.name }}
                 </v-btn>
-                <v-responsive v-show="isActive(link.route)" class="rounded-lg bg-secondary mx-auto">
+                <v-responsive v-show="isActive(link.route)" class="rounded-lg bg-primary mx-auto">
                     <v-divider class="pb-1 rounded-lg" light/>
                 </v-responsive>
             </div>
