@@ -1,5 +1,4 @@
 <script setup>
-import arpidio from "../../images/team/arpidio.png";
 import henry from "../../images/team/henry.png";
 import diego from "../../images/team/diego.png";
 
